@@ -8,7 +8,6 @@
 package utils
 
 import (
-	"log"
 	"testing"
 )
 
@@ -18,15 +17,17 @@ type People struct {
 }
 
 type Student struct {
-	People
+	Name  string
 	Grade int
 }
 
-func TestCopy(t *testing.T) {
+func TestCopyStruct(t *testing.T) {
 	s := Student{}
-	s.Name = "zhangsan"
-	s.Age = 20
+	s.Name = "jack"
 	s.Grade = 100
-	p := s.People
-	log.Println(p.Name)
+	p := People{}
+	CopyStruct(s, &p)
+	if p.Name != s.Name {
+		t.Error("CopyStruct fail!")
+	}
 }

@@ -17,7 +17,6 @@ func Copy(src interface{}, target interface{}) {
 	// get target Type and Value
 	targetType := reflect.TypeOf(target).Elem()
 	targetValue := reflect.ValueOf(target).Elem()
-
 	srcValue := reflect.ValueOf(src)
 
 	// get src val set to target field

@@ -13,8 +13,8 @@ import (
 )
 
 type People struct {
-	Name  string
-	Age   int
+	Name string
+	Age  int
 }
 
 type Student struct {
@@ -27,8 +27,6 @@ func TestCopy(t *testing.T) {
 	s.Name = "zhangsan"
 	s.Age = 20
 	s.Grade = 100
-
 	p := s.People
 	log.Println(p.Name)
 }
-
